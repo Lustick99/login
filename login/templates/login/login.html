@@ -10,7 +10,7 @@
 
 <!--Login-->
 
-<form method="post" action="{% url 'log:login' %}">
+<form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     <div class="login-form-head">
         <h4>Se Connecter</h4>
@@ -42,7 +42,7 @@
             <div class="col-5">
             </div>
             <div class="col-7 text-right">
-                <a href="{% url 'log:passe_oublie' %}">
+                <a href="{% url 'passe_oublie' %}">
                     Mot de passe Oublié ?
                 </a>
             </div>
@@ -51,7 +51,7 @@
             <button id="form_submit" type="submit">Se Connecter <i class="ti-arrow-right"></i></button>
         </div>
         <div class="form-footer text-center mt-5">
-            <p class="text-muted">Vous n'avez pas de compte ? <a href="{% url 'log:register' %}">Créez votre compte</a></p>
+            <p class="text-muted">Vous n'avez pas de compte ? <a href="{% url 'register' %}">Créez votre compte</a></p>
         </div>
     </div>
 </form>

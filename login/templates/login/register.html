@@ -27,7 +27,7 @@
 {% load crispy_forms_tags %}
 
 <!--Register-->
-<form method="post" action="{% url 'log:register' %}">
+<form method="post" action="{% url 'register' %}">
     {% csrf_token %}
     <div class="login-form-head">
         <h4>Créer mon compte</h4>
@@ -91,7 +91,7 @@
             </div> -->
         </div>
         <div class="form-footer text-center mt-5">
-            <p class="text-muted">Vous avez déjà un Compte ? <a href="{% url 'log:login' %}">Se Connecter</a></p>
+            <p class="text-muted">Vous avez déjà un Compte ? <a href="{% url 'login' %}">Se Connecter</a></p>
         </div>
     </div>
 </form>

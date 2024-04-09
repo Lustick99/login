@@ -1,0 +1,70 @@
+{% extends "login/base.html" %}
+
+{% block title%}
+    Se Connecter
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!--Login-->
+
+<form method="post" action="{% url 'log:login' %}">
+    {% csrf_token %}
+    <div class="login-form-head">
+        <h4>Se Connecter</h4>
+        <p>Bienvenue sur la page de connexion à l'interface d'administration de votre site</p>
+    </div>
+    <div class="login-form-body">
+        <div class="input-fields-div autoMargin">
+            <div class="input-field">
+            </div>
+            <div id="passwordDiv" class="input-field scale-transition">
+            </div>
+        </div>
+        {{ form.email.errors }}
+        <div class="form-gp">
+            <label for="user_name"> Email </label>
+            <input id="user_name" type="text" class="validate" name="email">
+            <i class="ti-email"></i>
+        </div>
+        {{ form.password.errors }}
+        <div class="form-gp">
+            <label for="pass_word"> Mot de Passe </label>
+            <input id="pass_word" type="password" class="validate" name="password">
+            <a class="showPassword" onclick="showPassword()">
+                <i class="fa fa-eye" style="color: #7e74ff; margin-right: 20px" id="icon"></i>
+            </a>
+            <i class="ti-lock"></i>
+        </div>
+        <div class="row mb-4 rmber-area">
+            <div class="col-5">
+            </div>
+            <div class="col-7 text-right">
+                <a href="#">Mot de passe oublié ?</a>
+            </div>
+        </div>
+        <div class="submit-btn-area">
+            <button id="form_submit" type="submit">Se Connecter <i class="ti-arrow-right"></i></button>
+        </div>
+        <div class="form-footer text-center mt-5">
+            <p class="text-muted">Vous n'avez pas de compte ? <a href="{% url 'log:register' %}">Créez votre compte</a></p>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    function showPassword() {
+        var x = document.getElementById("pass_word");
+        var i = document.getElementById("icon");
+        if (x.type === "password") {
+            x.type      = "text";
+            i.className ="fa fa-eye-slash"
+        } else {
+            x.type = "password";
+            i.className = "fa fa-eye"
+        }
+    }
+</script>
+{% endblock content %}

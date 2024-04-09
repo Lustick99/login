@@ -8,9 +8,6 @@ from django.utils.translation import gettext_lazy as _
 
 from phonenumber_field.modelfields import PhoneNumberField
 
-#from Shop.models import Shop
-
-
 # Own models
 
 class UserAccountManager(BaseUserManager):
